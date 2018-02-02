@@ -6,11 +6,15 @@ import java.util.Stack;
  * Created by Amay on 2/1/2018.
  */
 public class BasicCal extends Calculator{
-    public int cal(String exp){
-        char[] tokens = exp.toCharArray();
+    private Stack<Integer> val;
+    private Stack<Character> ops;
+    private char[] tokens;
 
-        Stack<Integer> val = new Stack<Integer>();
-        Stack<Character> ops = new Stack<Character>();
+    public int cal(String exp){
+        tokens = exp.toCharArray();
+
+        val = new Stack<Integer>();
+        ops = new Stack<Character>();
 
         for(int i=0;i<tokens.length;i++){
             if(tokens[i] == ' ')

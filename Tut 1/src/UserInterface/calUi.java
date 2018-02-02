@@ -14,6 +14,10 @@ public class calUi {
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter Expression:");
         exp = sc.nextLine();
+        if(exp.length() > 20){
+            System.out.println("Maximum length of 20");
+            getExp();
+        }
         return exp;
     }
     public static void main(String[] args) {

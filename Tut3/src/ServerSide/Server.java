@@ -16,8 +16,8 @@ public class Server implements Runnable{
     private Socket connectionSocket;
     private DataInputStream in;
     private DataOutputStream out;
-    private BasicCal calc;
-
+    public BasicCal calc;
+    private Map<String, String> res;
     private String line = "";
 
     public Server(Socket s)throws IOException {
@@ -30,7 +30,7 @@ public class Server implements Runnable{
             in = new DataInputStream(connectionSocket.getInputStream());
             out = new DataOutputStream(connectionSocket.getOutputStream());
             calc = new BasicCal();
-            Map<String, String> res = new Hashtable<String, String>();
+            res = new Hashtable<String, String>();
             while(true){
                 try{
                     line = in.readUTF();
